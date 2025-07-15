@@ -403,7 +403,11 @@ function Desktop() {
               className="px-4 sm:px-8 py-12"
             >
               <div className="mx-auto" style={{ maxWidth: "1716px" }}>
-                <p
+                <motion.p
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
                   style={{
                     fontFamily: "Inter",
                     fontWeight: 400,
@@ -423,7 +427,7 @@ function Desktop() {
                     ultimate in skincare with our expertly formulated products, crafted to nourish,
                     protect, and rejuvenate your skin.
                   </span>
-                </p>
+                </motion.p>
               </div>
             </motion.section>
 

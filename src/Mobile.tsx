@@ -304,7 +304,11 @@ function Mobile() {
                         {/* Bottom Description */}
                         <section className="px-4 py-8">
                             <div className="mx-auto">
-                                <p
+                                <motion.p
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }}
                                     style={{
                                         fontFamily: "Inter",
                                         fontWeight: 400,
@@ -324,7 +328,7 @@ function Mobile() {
                                         achieve a radiant, healthy glow. Embrace your beauty with
                                         confidence every day.
                                     </span>
-                                </p>
+                                </motion.p>
                             </div>
                         </section>
 

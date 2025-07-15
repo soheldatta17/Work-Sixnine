@@ -17,7 +17,6 @@ import heart from "/img/heart.png";
 import person from "/img/person.png";
 import { motion, AnimatePresence } from "framer-motion";
 import LoadingScreen from "./components/LoadingScreen";
-import ProductCarousel from "./components/ProductCarousel";
 import FAQSection from "./components/FAQSection";
 
 function Tablet() {
@@ -36,12 +35,6 @@ function Tablet() {
 
     const handleLoadingComplete = () => {
         setShowContent(true);
-    };
-
-    const pageVariants = {
-        initial: { opacity: 0, y: 20 },
-        in: { opacity: 1, y: 0 },
-        out: { opacity: 0, y: -20 }
     };
 
     const staggerContainer = {
@@ -111,7 +104,7 @@ function Tablet() {
 
             <AnimatePresence>
                 {showContent && (
-                    <motion.div className="min-h-screen" style={{ backgroundColor: "#FEFFF4" }}>
+                    <div className="min-h-screen" style={{ backgroundColor: "#FEFFF4" }}>
 
                         {/* Tablet Header */}
                         <motion.header
@@ -277,10 +270,6 @@ function Tablet() {
 
                                     {/* Notification */}
                                     <motion.div
-                                        initial={{ x: -50, opacity: 0 }}
-                                        whileInView={{ x: 0, opacity: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.6, delay: 0.3 }}
                                         className="absolute bottom-8 left-4 bg-opacity-90 shadow-lg"
                                         style={{
                                             backgroundColor: "#EFF5E1",
@@ -339,8 +328,12 @@ function Tablet() {
 
                         {/* Bottom Description */}
                         <section className="px-4 py-8">
-                            <motion.div className="mx-auto">
-                                <p
+                            <div className="mx-auto">
+                                <motion.p
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }}
                                     style={{
                                         fontFamily: "Inter",
                                         fontWeight: 400,
@@ -360,24 +353,29 @@ function Tablet() {
                                         achieve a radiant, healthy glow. Embrace your beauty with
                                         confidence every day.
                                     </span>
-                                </p>
-                            </motion.div>
+                                </motion.p>
+                            </div>
                         </section>
 
                         {/* Why Our Products Section - Mobile */}
                         <section className="px-4 py-12">
-                            <motion.div className="max-w-full mx-auto">
+                            <div className="max-w-full mx-auto">
                                 {/* Badge */}
-                                <motion.div className="flex mb-6">
-                                    <motion.div className="inline-flex items-center gap-3 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-700">
-                                        <motion.div
+                                <motion.div
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }}
+                                    className="flex mb-6">
+                                    <div className="inline-flex items-center gap-3 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-700">
+                                        <div
                                             style={{
                                                 width: "10px",
                                                 height: "10px",
                                                 backgroundColor: "#2D3B36",
                                                 borderRadius: "50%",
                                             }}
-                                        ></motion.div>
+                                        ></div>
                                         <span
                                             style={{
                                                 fontFamily: "Inter",
@@ -390,11 +388,15 @@ function Tablet() {
                                         >
                                             Why Our Products
                                         </span>
-                                    </motion.div>
+                                    </div>
                                 </motion.div>
 
                                 {/* Main heading */}
-                                <h2
+                                <motion.h2
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }}
                                     className="mb-6 leading-tight"
                                     style={{
                                         fontFamily: "Inter",
@@ -408,10 +410,14 @@ function Tablet() {
                                     YOUR SKIN DESERVES
                                     <br />
                                     THE BEST CARE.
-                                </h2>
+                                </motion.h2>
 
                                 {/* Description */}
-                                <p
+                                <motion.p
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }}
                                     className="text-gray-600 mb-8 leading-relaxed text-center px-2"
                                     style={{
                                         fontFamily: "Inter",
@@ -424,11 +430,11 @@ function Tablet() {
                                 >
                                     Discover our premium skincare collection, featuring products
                                     designed to rejuvenate, protect, and pamper your skin.
-                                </p>
+                                </motion.p>
 
 
                                 {/* Features list */}
-                                <motion.div className="space-y-8">
+                                <div className="space-y-8">
                                     {[
                                         {
                                             number: "01",
@@ -446,7 +452,7 @@ function Tablet() {
                                             desc: "Made with love and care. Just for you. Give your skin the tender loving care it deserves.",
                                         },
                                     ].map(({ number, title, desc }) => (
-                                        <motion.div key={number} className="flex items-start space-x-6">
+                                        <div key={number} className="flex items-start space-x-6">
                                             {/* Number on the left */}
                                             <span
                                                 className="text-[32px] font-bold bg-clip-text text-transparent leading-none"
@@ -459,7 +465,7 @@ function Tablet() {
                                             </span>
 
                                             {/* Text Content on the right */}
-                                            <motion.div>
+                                            <div>
                                                 <h3
                                                     className="text-gray-800 mb-2"
                                                     style={{
@@ -486,14 +492,14 @@ function Tablet() {
                                                 >
                                                     {desc}
                                                 </p>
-                                            </motion.div>
-                                        </motion.div>
+                                            </div>
+                                        </div>
                                     ))}
-                                </motion.div>
-                                <motion.div className="relative w-full px-4 sm:px-8">
+                                </div>
+                                <div className="relative w-full px-4 sm:px-8">
                                     {/* Image */}
-                                    <motion.div className="mb-8 flex justify-center mt-8 w-full">
-                                        <motion.div
+                                    <div className="mb-8 flex justify-center mt-8 w-full">
+                                        <div
                                             className="rounded-2xl relative overflow-hidden flex items-center justify-center w-full max-w-[700px]"
                                             style={{ height: "350px" }}
                                         >
@@ -502,24 +508,24 @@ function Tablet() {
                                                 alt="Woman with Face Mask"
                                                 className="w-full h-full object-cover"
                                             />
-                                        </motion.div>
-                                    </motion.div>
+                                        </div>
+                                    </div>
 
                                     {/* Award notification */}
-                                    <motion.div
+                                    <div
                                         className="absolute left-1/2 transform -translate-x-1/2 bg-white bg-opacity-90 p-4 shadow-lg flex items-center space-x-5 w-[90%] sm:w-auto"
                                         style={{
                                             bottom: "5%",
                                             borderRadius: "200px",
                                         }}
                                     >
-                                        <motion.div
+                                        <div
                                             className="w-14 h-14 flex-shrink-0 rounded-full flex items-center justify-center"
                                             style={{
                                                 border: "1px dashed #000",
                                             }}
                                         >
-                                            <motion.div
+                                            <div
                                                 className="w-12 h-12 rounded-full overflow-hidden"
                                                 style={{
                                                     backgroundColor: "#2D3B36",
@@ -531,10 +537,10 @@ function Tablet() {
                                                     alt="Inner Icon"
                                                     className="w-full h-full object-cover"
                                                 />
-                                            </motion.div>
-                                        </motion.div>
+                                            </div>
+                                        </div>
 
-                                        <motion.div>
+                                        <div>
                                             <p
                                                 style={{
                                                     fontFamily: "Inter",
@@ -549,13 +555,18 @@ function Tablet() {
                                                 Best Skin Care Product<br />
                                                 Award Winning
                                             </p>
-                                        </motion.div>
-                                    </motion.div>
-                                </motion.div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
                                 {/* Bottom info */}
-                                <motion.div className="flex justify-between items-center mt-8 px-4">
+                                <motion.div
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }}
+                                    className="flex justify-between items-center mt-8 px-4">
                                     <p
                                         className="text-gray-600"
                                         style={{
@@ -587,23 +598,29 @@ function Tablet() {
                                         LEARN MORE
                                     </button>
                                 </motion.div>
-                            </motion.div>
+                            </div>
                         </section>
 
                         {/* Best Selling Products Section - Mobile */}
-                        <section className="px-4 py-12">
-                            <motion.div className="max-w-full mx-auto">
+                        <section
+                            className="px-4 py-12">
+                            <div className="max-w-full mx-auto">
                                 {/* Badge */}
-                                <motion.div className="flex mb-6">
-                                    <motion.div className="inline-flex items-center gap-3 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-700">
-                                        <motion.div
+                                <motion.div
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }}
+                                    className="flex mb-6">
+                                    <div className="inline-flex items-center gap-3 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-700">
+                                        <div
                                             style={{
                                                 width: "10px",
                                                 height: "10px",
                                                 backgroundColor: "#2D3B36",
                                                 borderRadius: "50%",
                                             }}
-                                        ></motion.div>
+                                        ></div>
                                         <span
                                             style={{
                                                 fontFamily: "Inter",
@@ -616,11 +633,15 @@ function Tablet() {
                                         >
                                             Best Selling Products
                                         </span>
-                                    </motion.div>
+                                    </div>
                                 </motion.div>
 
                                 {/* Title */}
-                                <motion.div className="mb-8">
+                                <motion.div
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }} className="mb-8">
                                     <h2
                                         style={{
                                             fontFamily: "Inter",
@@ -638,9 +659,9 @@ function Tablet() {
                                 </motion.div>
 
                                 {/* Navigation arrows */}
-                                <motion.div className="px-4">
+                                <div className="px-4">
                                     {/* Product Card */}
-                                    <motion.div
+                                    <div
                                         className="relative max-w-[320px] mx-auto rounded-2xl overflow-hidden shadow-sm"
                                         style={{
                                             backgroundColor: product[currentIndex].bgColor,
@@ -654,7 +675,7 @@ function Tablet() {
                                         />
 
                                         {/* Info Box */}
-                                        <motion.div
+                                        <div
                                             className="absolute bottom-4 left-4 right-4 backdrop-blur-sm rounded-lg p-4"
                                             style={{
                                                 backgroundColor: product[currentIndex].isDark
@@ -662,8 +683,8 @@ function Tablet() {
                                                     : "rgba(255, 255, 255, 0.9)",
                                             }}
                                         >
-                                            <motion.div className="flex justify-between items-start">
-                                                <motion.div>
+                                            <div className="flex justify-between items-start">
+                                                <div>
                                                     <h3
                                                         style={{
                                                             fontFamily: "Inter",
@@ -691,7 +712,7 @@ function Tablet() {
                                                     >
                                                         {product[currentIndex].price}
                                                     </p>
-                                                </motion.div>
+                                                </div>
                                                 <button
                                                     className="w-[40px] h-[40px] border border-gray-300 rounded flex items-center justify-center hover:bg-gray-50"
                                                     style={{
@@ -707,12 +728,12 @@ function Tablet() {
                                                     />
                                                 </button>
 
-                                            </motion.div>
-                                        </motion.div>
-                                    </motion.div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     {/* Navigation Buttons */}
-                                    <motion.div className="flex justify-center space-x-2 mt-6">
+                                    <div className="flex justify-center space-x-2 mt-6">
                                         <button
                                             onClick={scrollLeft}
                                             className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
@@ -725,16 +746,20 @@ function Tablet() {
                                         >
                                             <span>→</span>
                                         </button>
-                                    </motion.div>
-                                </motion.div>
-                            </motion.div>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
 
                         {/* Feel Beautiful Section - Mobile */}
                         <section className="px-4 py-12">
-                            <motion.div className="max-w-full mx-auto">
+                            <div className="max-w-full mx-auto">
                                 {/* Title */}
-                                <motion.div className=" mb-6">
+                                <motion.div
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }} className=" mb-6">
                                     <h2
                                         style={{
                                             fontFamily: "Inter",
@@ -752,7 +777,11 @@ function Tablet() {
                                 </motion.div>
 
                                 {/* Category Filter Buttons - Mobile scroll */}
-                                <motion.div className="grid grid-cols-2 gap-3 mb-8">
+                                <motion.div
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3 }} className="grid grid-cols-2 gap-3 mb-8">
                                     {[
                                         { label: "NEW ARRIVAL", filled: true },
                                         { label: "CLEANSING" },
@@ -781,12 +810,12 @@ function Tablet() {
                                 </motion.div>
 
                                 {/* Product Grid - Single column for mobile */}
-                                <motion.div>
+                                <div>
 
                                     {/* Horizontal Scroll Container */}
-                                    <motion.div className="px-4">
+                                    <div className="px-4">
                                         {/* Product Card */}
-                                        <motion.div
+                                        <div
                                             className="relative max-w-[320px] mx-auto rounded-2xl overflow-hidden shadow-sm"
                                             style={{
                                                 backgroundColor: product[currentIndex2].bgColor,
@@ -800,14 +829,14 @@ function Tablet() {
                                             />
 
                                             {/* Info Box */}
-                                            <motion.div
+                                            <div
                                                 className="absolute bottom-4 left-4 right-4 backdrop-blur-sm rounded-lg p-4"
                                                 style={{
                                                     backgroundColor: "rgba(255, 255, 255, 0.9)",
                                                 }}
                                             >
-                                                <motion.div className="flex justify-between items-start">
-                                                    <motion.div>
+                                                <div className="flex justify-between items-start">
+                                                    <div>
                                                         <h3
                                                             style={{
                                                                 fontFamily: "Inter",
@@ -833,7 +862,7 @@ function Tablet() {
                                                         >
                                                             {product[currentIndex2].price}
                                                         </p>
-                                                    </motion.div>
+                                                    </div>
                                                     <button
                                                         className="w-[40px] h-[40px] border border-gray-300 rounded flex items-center justify-center hover:bg-gray-50"
                                                         style={{
@@ -847,12 +876,12 @@ function Tablet() {
                                                         />
                                                     </button>
 
-                                                </motion.div>
-                                            </motion.div>
-                                        </motion.div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         {/* Navigation Buttons */}
-                                        <motion.div className="flex justify-center space-x-2 mt-6">
+                                        <div className="flex justify-center space-x-2 mt-6">
                                             <button
                                                 onClick={scrollLeft2}
                                                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
@@ -865,29 +894,34 @@ function Tablet() {
                                             >
                                                 <span>→</span>
                                             </button>
-                                        </motion.div>
+                                        </div>
 
-                                    </motion.div>
-                                </motion.div>
-                            </motion.div>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
 
                         {/* FAQ Section - Mobile */}
                         <section className="px-4 py-12">
-                            <motion.div className="max-w-full mx-auto">
+                            <div className="max-w-full mx-auto">
 
                                 {/* FAQ Content */}
-                                <motion.div>
-                                    <motion.div className="flex mb-6">
-                                        <motion.div className="inline-flex items-center gap-3 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-700">
-                                            <motion.div
+                                <div>
+                                    <div className="flex mb-6">
+                                        <motion.div
+                                            initial={{ x: -50, opacity: 0 }}
+                                            whileInView={{ x: 0, opacity: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.6, delay: 0.3 }}
+                                            className="inline-flex items-center gap-3 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm text-gray-700">
+                                            <div
                                                 style={{
                                                     width: "10px",
                                                     height: "10px",
                                                     backgroundColor: "#2D3B36",
                                                     borderRadius: "50%",
                                                 }}
-                                            ></motion.div>
+                                            ></div>
                                             <h3
                                                 style={{
                                                     fontFamily: "Inter",
@@ -901,9 +935,13 @@ function Tablet() {
                                                 Frequently Asked Question
                                             </h3>
                                         </motion.div>
-                                    </motion.div>
+                                    </div>
 
-                                    <h2
+                                    <motion.h2
+                                        initial={{ x: -50, opacity: 0 }}
+                                        whileInView={{ x: 0, opacity: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
                                         className="mb-8"
                                         style={{
                                             fontFamily: "Inter",
@@ -920,88 +958,15 @@ function Tablet() {
                                         Skincare Questions,
                                         <br />
                                         All in One Place.
-                                    </h2>
+                                    </motion.h2>
 
                                     {/* FAQ Items */}
-                                    <motion.div className="space-y-3">
-                                        {[
-                                            {
-                                                question: "Are your products safe for sensitive skin?",
-                                                isOpen: false,
-                                            },
-                                            {
-                                                question: "Are your products cruelty-free?",
-                                                isOpen: true,
-                                                answer:
-                                                    "Absolutely! All our products are cruelty-free, and most are vegan. Check inmotion.dividual product details for specifics.",
-                                            },
-                                            {
-                                                question: "What's your return policy?",
-                                                isOpen: false,
-                                            },
-                                            {
-                                                question: "Do you ship internationally?",
-                                                isOpen: false,
-                                            },
-                                            {
-                                                question: "How do I choose the right product?",
-                                                isOpen: false,
-                                            },
-                                        ].map((faq, index) => (
-                                            <motion.div
-                                                key={index}
-                                                className="rounded-lg border"
-                                                style={{
-                                                    border: "1px solid #2D3B36",
-                                                }}
-                                            >
-                                                <button className="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50">
-                                                    <h3
-                                                        style={{
-                                                            fontFamily: "Inter",
-                                                            fontWeight: 400,
-                                                            fontStyle: "normal",
-                                                            fontSize: "16px",
-                                                            lineHeight: "20px",
-                                                            letterSpacing: "0%",
-                                                            color: "#2D3B36",
-                                                        }}
-                                                    >
-                                                        {faq.question}
-                                                    </h3>
-
-                                                    <img
-                                                        src={faq.isOpen ? minus : plus}
-                                                        alt={faq.isOpen ? "Minus" : "Plus"}
-                                                        className="w-4 h-4"
-                                                    />
-                                                </button>
-                                                {faq.isOpen && (
-                                                    <motion.div className="px-4 pb-3">
-                                                        <p
-                                                            style={{
-                                                                fontFamily: "Inter",
-                                                                fontWeight: 400,
-                                                                fontStyle: "normal",
-                                                                fontSize: "14px",
-                                                                lineHeight: "20px",
-                                                                letterSpacing: "0%",
-                                                                color: "#525349",
-                                                            }}
-                                                        >
-                                                            {faq.answer}
-                                                        </p>
-                                                    </motion.div>
-                                                )}
-                                            </motion.div>
-                                        ))}
-                                    </motion.div>
-
-                                </motion.div>
-                            </motion.div>
-                            <motion.div className="relative h-auto w-full" style={{ marginTop: "2rem" }}>
-                                <motion.div className="rounded-2xl overflow-hidden bg-gray-200">
-                                    <motion.div
+                                    <FAQSection plus={plus} minus={minus} />
+                                </div>
+                            </div>
+                            <div className="relative h-auto w-full" style={{ marginTop: "2rem" }}>
+                                <div className="rounded-2xl overflow-hidden bg-gray-200">
+                                    <div
                                         className="bg-gray-300 flex flex-col items-center justify-center relative"
                                         style={{ borderRadius: "20px" }}
                                     >
@@ -1012,18 +977,18 @@ function Tablet() {
                                         />
 
                                         {/* Help Button */}
-                                        <motion.div
+                                        <div
                                             className="absolute bottom-4 left-1/2 transform -translate-x-1/2 backdrop-blur-sm rounded-full px-6 py-3 flex justify-center items-center gap-4 shadow-md min-w-[250px] sm:min-w-[150px]"
                                             style={{
                                                 backgroundColor: "#EFF5E1",
 
                                             }}
                                         >
-                                            <motion.div
+                                            <div
                                                 className="w-12 h-12 rounded-full flex items-center justify-center"
                                                 style={{ border: "1px dashed #2D3B36" }}
                                             >
-                                                <motion.div
+                                                <div
                                                     className="w-10 h-10 rounded-full flex items-center justify-center"
                                                     style={{ backgroundColor: "#2D3B36", padding: "4px" }}
                                                 >
@@ -1032,10 +997,10 @@ function Tablet() {
                                                         alt="Inner Icon"
                                                         className="w-full h-full object-cover"
                                                     />
-                                                </motion.div>
-                                            </motion.div>
+                                                </div>
+                                            </div>
 
-                                            <motion.div>
+                                            <div>
                                                 <p
                                                     className="text-sm sm:text-base leading-snug text-center"
                                                     style={{
@@ -1049,18 +1014,23 @@ function Tablet() {
                                                     <br />
                                                     to Help You
                                                 </p>
-                                            </motion.div>
-                                        </motion.div>
+                                            </div>
+                                        </div>
 
-                                    </motion.div>
-                                </motion.div>
-                            </motion.div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </section>
 
                         {/* Footer - Mobile */}
-                        <footer className="relative w-full px-4 py-12 bg-[#2D3B36]">
-                            <motion.div className="max-w-[1400px] mx-auto relative z-10 space-y-10">
+                        <motion.footer
+                            initial={{ x: -50, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="relative w-full px-4 py-12 bg-[#2D3B36]">
+                            <div className="max-w-[1400px] mx-auto relative z-10 space-y-10">
 
                                 {/* Heading */}
                                 <div>
@@ -1112,10 +1082,10 @@ function Tablet() {
                                         SKINCARE
                                     </h2>
                                 </div>
-                            </motion.div>
-                        </footer>
+                            </div>
+                        </motion.footer>
 
-                    </motion.div >
+                    </div >
                 )}
             </AnimatePresence>
         </>
